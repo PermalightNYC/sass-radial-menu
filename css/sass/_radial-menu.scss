@@ -1,0 +1,75 @@
+@import "compass/css3";
+/* 
+ * Sass-Radial-Menu v1.0a
+ * Sass+Compass Radial Menu Mixin
+ * http://permalightnyc.com/experiments/radial-menu
+ *
+ * Licensed under the MIT license.
+ * Copyright 2012 Dan Leatherman
+ */
+
+$size: 50; // element size
+$color: #222222; // hover color
+$initial: #acacac; // background color of items
+$factor: 1.5; // helps position circles in the middle of the element
+$distance: 2.1; // higher numbers make items further apart
+
+@mixin radial($items: 8, $itemSize: $size) {
+  $step: (2 * pi()) / ($items);
+  $rotation: (90 / 180) * pi();
+  $radius: sqrt($itemSize) * sqrt($itemSize) * $distance;
+  background: $color;
+  height: 0;
+  margin: 0 auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 150px;
+  width: 0;
+  z-index: 1;
+  .arm {
+    height: #{$size}px;
+    left: -#{$itemSize/($factor * 2)}px;
+    position: absolute;
+    top: -#{$itemSize/($factor * 2)}px;
+    width: #{$size}px;
+    z-index: 0;
+    @include single-transition(all, 0.1s, ease-in-out);
+  }
+  .circle {
+    background: $initial;
+    @include border-radius(25px);
+    line-height: 1;
+    height: #{$size}px;
+    @include single-transition(all, 0.1s);
+    width: #{$size}px;
+    i.ss-icon {
+      color: #fff;
+      display: block;
+      line-height: 50px;
+      padding: 3px 0;
+    }
+  }
+  &.active .arm:nth-child(1) .circle {
+    background: rgba($color, 0.75);
+    @include rotate;
+  }
+  @for $i from 1 through $items {
+    .arm:nth-child(#{$i}) {
+      @include transition-delay(#{$i/20}s);
+      z-index: #{$items - $i}; // make sure first item is on top
+    }
+  }
+  @for $i from 1 through $items {
+    $x: cos($i * $step - $rotation) * $radius - ($itemSize / $factor);
+    $y: sin($i * $step - $rotation) * $radius - ($itemSize/ $factor);
+    &.active .arm:nth-child(#{$i}) {
+      top: #{$x/$factor}px;
+      left: #{$y/$factor}px;
+      &:hover .circle {
+        background: rgba($color, 0.75);
+      }
+    }
+  }
+
+}

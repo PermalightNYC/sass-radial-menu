@@ -1,0 +1,60 @@
+@import "compass/css3";
+@import "radial-menu";
+$dark: #222;
+$lighter: lighten($dark, 10%);
+$middle: lighten($dark, 30%);
+$light: lighten($dark, 60%);
+$lightest: lighten($light, 10%);
+$primary: #4b4b4b;
+$secondary: #aa2d2d;
+$tertiary: #2d9daa;
+
+html, body {
+  background: url('../img/bg.jpg') top center;
+  color: $primary;
+  font: 300 18px/1.5 'soleil', Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+html.multiplebgs.cssgradients body {
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8), 
+    -webkit-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8);
+  background-image: -moz-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8), 
+    -moz-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8);
+  background-image: -o-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8), 
+    -o-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8);
+  background-image: linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8), 
+  linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8);
+  background-size: 16px 16px;
+  background-position:0 0, 8px 8px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 400;
+}
+
+a {
+  color: $secondary;
+  &:hover {
+    color: $tertiary;
+  }
+}
+
+hr {
+  padding: 5% 0;
+}
+
+.github-ribbon {
+  border: 0;
+  left: 0; 
+  position: absolute;
+  top: 0;
+  z-index: 10
+}
+
+@media all and (max-width: 768px) {
+  .github-ribbon {
+    display: none;
+  }
+}
