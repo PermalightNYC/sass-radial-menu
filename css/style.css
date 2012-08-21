@@ -1,0 +1,53 @@
+/* line 11, sass/style.scss */
+html, body {
+  background: url("../img/bg.jpg") top center;
+  color: #4b4b4b;
+  font: 300 18px/1.5 "soleil", Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+/* line 18, sass/style.scss */
+html.multiplebgs.cssgradients body {
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8), -webkit-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8);
+  background-image: -moz-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8), -moz-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8);
+  background-image: -o-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8), -o-linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8);
+  background-image: linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8), linear-gradient(45deg, #f8f8f8 25%, transparent 25%, transparent 75%, #f8f8f8 75%, #f8f8f8);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+}
+
+/* line 32, sass/style.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+/* line 36, sass/style.scss */
+a {
+  color: #aa2d2d;
+}
+/* line 38, sass/style.scss */
+a:hover {
+  color: #2d9daa;
+}
+
+/* line 43, sass/style.scss */
+hr {
+  padding: 5% 0;
+}
+
+/* line 47, sass/style.scss */
+.github-ribbon {
+  border: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+@media all and (max-width: 768px) {
+  /* line 56, sass/style.scss */
+  .github-ribbon {
+    display: none;
+  }
+}
